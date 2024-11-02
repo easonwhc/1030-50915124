@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文字轉語音</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body class="gradient-background">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">首頁</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="page1.html">AOS 動畫</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page2.html">文字轉語音</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page3.html">Lottie 動畫</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page4.html">Chart.js 圖表</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page5.html">圖片懶加載</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page6.html">SweetAlert2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page7.html">Dragula</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page8.html">Typed.js</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page9.html">Vivus.js</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page10.html">Three.js 3D</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5" style="margin-top: 100px;">
+        <h2 class="text-center mb-4 text-primary">文字轉語音</h2>
+
+        <h5 class="text-secondary">官方網站連結</h5>
+        <p>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis" target="_blank"
+                class="text-info">
+                https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis
+            </a>
+        </p>
+
+        <h5 class="text-secondary">範例程式碼</h5>
+        <div class="code-block p-3 mb-4"
+            style="background-color: #f8f9fa; border-radius: 5px; border: 1px solid #ced4da;">
+            <pre>
+                <code>&lt;textarea id="text-to-speech" class="form-control" rows="5" placeholder="請輸入要轉換的文字..."&gt;&lt;/textarea&gt;</code><br>
+                <code>&lt;button id="speak-button" class="btn btn-primary"&gt;播放語音&lt;/button&gt;</code><br>
+                <br>
+                <code>document.getElementById('speak-button').addEventListener('click', function () {</code><br>
+                <code>&nbsp;&nbsp;const text = document.getElementById('text-to-speech').value;</code><br>
+                <code>&nbsp;&nbsp;if (text) {</code><br>
+                <code>&nbsp;&nbsp;&nbsp;&nbsp;const speech = new SpeechSynthesisUtterance(text);</code><br>
+                <code>&nbsp;&nbsp;&nbsp;&nbsp;speech.lang = 'zh-TW';</code><br>
+                <code>&nbsp;&nbsp;&nbsp;&nbsp;window.speechSynthesis.speak(speech);</code><br>
+                <code>&nbsp;&nbsp;} else {</code><br>
+                <code>&nbsp;&nbsp;&nbsp;&nbsp;alert("請輸入要轉換的文字！");</code><br>
+                <code>&nbsp;&nbsp;}</code><br>
+                <code>&});</code>
+            </pre>
+        </div>
+
+        <h5 class="text-secondary">範例展示效果</h5>
+        <p>請在上面的文本框中輸入文字，然後按下「播放語音」按鈕，您的文字將會轉換為語音。</p>
+
+        <textarea id="text-to-speech" class="form-control" rows="5" placeholder="請輸入要轉換的文字..."></textarea>
+        <button id="speak-button" class="btn btn-primary mt-3">播放語音</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('speak-button').addEventListener('click', function () {
+            const text = document.getElementById('text-to-speech').value;
+            if (text) {
+                const speech = new SpeechSynthesisUtterance(text);
+                speech.lang = 'zh-TW';
+                window.speechSynthesis.speak(speech);
+            } else {
+                alert("請輸入要轉換的文字！");
+            }
+        });
+    </script>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

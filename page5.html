@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圖片懶加載</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body class="gradient-background">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">首頁</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="page1.html">AOS 動畫</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page2.html">文字轉語音</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page3.html">Lottie 動畫</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page4.html">Chart.js 圖表</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page5.html">圖片懶加載</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page6.html">SweetAlert2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page7.html">Dragula</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page8.html">Typed.js</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page9.html">Vivus.js</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page10.html">Three.js 3D</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5" style="margin-top: 100px;">
+        <h2 class="text-center mb-4 text-primary">圖片懶加載</h2>
+
+        <h5 class="text-secondary">官方網站連結</h5>
+        <p>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API" target="_blank"
+                class="text-info">
+                https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
+            </a>
+        </p>
+
+        <h5 class="text-secondary">範例程式碼</h5>
+        <div class="code-block p-3 mb-4"
+            style="background-color: #f8f9fa; border-radius: 5px; border: 1px solid #ced4da;">
+            <pre>
+                <code>&lt;!-- 假設我們有一張圖片，僅當圖片進入視窗範圍時才載入 --&gt;</code><br>
+                <code>const img = document.querySelector('.lazy');</code><br>
+                <code>const observer = new IntersectionObserver(entries =&gt; {</code><br>
+                <code>&nbsp;&nbsp;entries.forEach(entry =&gt; {</code><br>
+                <code>&nbsp;&nbsp;&nbsp;&nbsp;if (entry.isIntersecting) {</code><br>
+                <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;entry.target.src = entry.target.dataset.src;</code><br>
+                <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;observer.unobserve(entry.target); // 停止觀察該圖片</code><br>
+                <code>&nbsp;&nbsp;&nbsp;&nbsp;}</code><br>
+                <code>&nbsp;&nbsp;});</code><br>
+                <code>});</code><br>
+                <code>observer.observe(img);</code>
+            </pre>
+        </div>
+
+        <h5 class="text-secondary">範例展示</h5>
+        <div id="image-container" class="row"></div>
+
+        <h5 class="text-secondary">完整範例程式碼</h5>
+        <div class="code-block p-3 mb-4"
+            style="background-color: #f8f9fa; border-radius: 5px; border: 1px solid #ced4da;">
+            <pre>
+                <code>&lt;!-- 使用 JavaScript 動態生成圖片 --&gt;</code><br>
+                <code>function generateImages(imageCount) {</code><br>
+                <code>&nbsp;&nbsp;const container = document.getElementById('image-container');</code><br>
+                <code>&nbsp;&nbsp;for (let i = 1; i &lt;= imageCount; i++) {</code><br>
+                <code>&nbsp;&nbsp;&nbsp;&nbsp;const col = document.createElement('div');</code><br>
+                <code>&nbsp;&nbsp;&nbsp;&nbsp;col.className = 'col-4 mb-3';</code><br>
+                <code>&nbsp;&nbsp;&nbsp;&nbsp;const img = document.createElement('img');</code><br>
+                <code>&nbsp;&nbsp;&nbsp;&nbsp;img.dataset.src = `http://fakeimg.pl/300x250/?text=${i}`;</code><br>
+                <code>&nbsp;&nbsp;&nbsp;&nbsp;img.className = 'lazy img-fluid';</code><br>
+                <code>&nbsp;&nbsp;&nbsp;&nbsp;img.alt = `圖片 ${i}`;</code><br>
+                <code>&nbsp;&nbsp;&nbsp;&nbsp;col.appendChild(img);</code><br>
+                <code>&nbsp;&nbsp;&nbsp;&nbsp;container.appendChild(col);</code><br>
+                <code>&nbsp;&nbsp;} </code><br>
+                <code>}</code><br>
+                <br>
+                <code>&lt;!-- 初始化懶加載 --&gt;</code><br>
+                <code>function initLazyLoading() {</code><br>
+                <code>&nbsp;&nbsp;const images = document.querySelectorAll('.lazy');</code><br>
+                <code>&nbsp;&nbsp;const observer = new IntersectionObserver(entries =&gt; {</code><br>
+                <code>&nbsp;&nbsp;&nbsp;&nbsp;entries.forEach(entry =&gt; {</code><br>
+                <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (entry.isIntersecting) {</code><br>
+                <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const img = entry.target;</code><br>
+                <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;img.src = img.dataset.src;</code><br>
+                <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;observer.unobserve(img); // 停止觀察該圖片</code><br>
+                <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code><br>
+                <code>&nbsp;&nbsp;&nbsp;&nbsp;});</code><br>
+                <code>&nbsp;&nbsp;});</code><br>
+                <code>&nbsp;&nbsp;images.forEach(image =&gt; observer.observe(image));</code><br>
+                <code>}</code><br>
+                <br>
+                <code>&lt;!-- 生成 99 張圖片並初始化懶加載 --&gt;</code><br>
+                <code>generateImages(99);</code><br>
+                <code>initLazyLoading();</code>
+            </pre>
+        </div>
+    </div>
+
+    <script>
+        // 使用 JavaScript 動態生成圖片
+        function generateImages(imageCount) {
+            const container = document.getElementById('image-container');
+            for (let i = 1; i <= imageCount; i++) {
+                const col = document.createElement('div');
+                col.className = 'col-4 mb-3';
+
+                const img = document.createElement('img');
+                img.dataset.src = `http://fakeimg.pl/300x250/?text=${i}`;
+                img.className = 'lazy img-fluid';
+                img.alt = `圖片 ${i}`;
+
+                col.appendChild(img);
+                container.appendChild(col);
+            }
+        }
+
+        // 初始化懶加載
+        function initLazyLoading() {
+            const images = document.querySelectorAll('.lazy');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        observer.unobserve(img); // 停止觀察該圖片
+                    }
+                });
+            });
+            images.forEach(image => observer.observe(image));
+        }
+
+        // 生成 99 張圖片並初始化懶加載
+        generateImages(99);
+        initLazyLoading();
+    </script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

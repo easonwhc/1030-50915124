@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivus.js</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body class="gradient-background">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">首頁</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="page1.html">AOS 動畫</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page2.html">文字轉語音</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page3.html">Lottie 動畫</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page4.html">Chart.js 圖表</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page5.html">圖片懶加載</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page6.html">SweetAlert2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page7.html">Dragula</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page8.html">Typed.js</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page9.html">Vivus.js</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page10.html">Three.js 3D</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container mt-5" style="margin-top: 100px;">
+        <h2 class="text-center mb-4 text-primary">Vivus.js</h2>
+
+        <h5 class="text-secondary">官方網站連結</h5>
+        <p>
+            <a href="http://maxwellito.github.io/vivus/" target="_blank" class="text-info">
+                http://maxwellito.github.io/vivus/
+            </a>
+        </p>
+
+        <h5 class="text-secondary">範例程式碼</h5>
+        <div class="code-block p-3 mb-4"
+            style="background-color: #f8f9fa; border-radius: 5px; border: 1px solid #ced4da;">
+            <pre>
+                <code>&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.0/vivus.min.js"&gt;&lt;/script&gt;</code><br>
+                <code>&lt;svg id="svg" width="200" height="200"&gt;</code><br>
+                <code>&nbsp;&nbsp;&lt;path d="M10 80 C 40 10, 65 10, 95 80 S 150 150, 180 80" stroke="black" fill="transparent"/&gt;</code><br>
+                <code>&lt;/svg&gt;</code><br>
+                <br>
+                <code>&lt;script&gt;</code><br>
+                <code>&nbsp;&nbsp;new Vivus('svg', { type: 'delayed', duration: 200 });</code><br>
+                <code>&lt;/script&gt;</code>
+            </pre>
+        </div>
+
+        <h5 class="text-secondary">範例展示效果</h5>
+        <div id="vivus-example">
+            <svg id="svg" width="200" height="200">
+
+                <path d="M10 80 C 40 10, 65 10, 95 80 S 150 150, 180 80" stroke="black" fill="transparent" />
+
+            </svg>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.0/vivus.min.js"></script>
+    <script>
+        new Vivus('svg', { type: 'delayed', duration: 200 });
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

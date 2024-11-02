@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lottie 動畫</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body class="gradient-background">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">首頁</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="page1.html">AOS 動畫</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page2.html">文字轉語音</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page3.html">Lottie 動畫</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page4.html">Chart.js 圖表</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page5.html">圖片懶加載</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page6.html">SweetAlert2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page7.html">Dragula</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page8.html">Typed.js</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page9.html">Vivus.js</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page10.html">Three.js 3D</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5" style="margin-top: 100px;">
+        <h2 class="text-center mb-4 text-primary">Lottie 動畫效果</h2>
+
+        <h5 class="text-secondary">官方網站連結</h5>
+        <p>
+            <a href="https://airbnb.io/lottie" target="_blank" class="text-info">
+                https://airbnb.io/lottie
+            </a>
+        </p>
+
+        <h5 class="text-secondary">範例程式碼</h5>
+        <div class="code-block p-3 mb-4"
+            style="background-color: #f8f9fa; border-radius: 5px; border: 1px solid #ced4da;">
+            <pre>
+                <code>&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"&gt;&lt;/script&gt;</code><br>
+                <code>&lt;div id="lottie" style="width: 500px; height: 500px; margin: auto;"&gt;&lt;/div&gt;</code><br>
+                <br>
+                <code>&lt;script&gt;</code><br>
+                <code>&nbsp;&nbsp;var animation = lottie.loadAnimation({</code><br>
+                <code>&nbsp;&nbsp;&nbsp;&nbsp;container: document.getElementById('lottie'),</code><br>
+                <code>&nbsp;&nbsp;&nbsp;&nbsp;renderer: 'svg',</code><br>
+                <code>&nbsp;&nbsp;&nbsp;&nbsp;loop: true,</code><br>
+                <code>&nbsp;&nbsp;&nbsp;&nbsp;autoplay: true,</code><br>
+                <code>&nbsp;&nbsp;&nbsp;&nbsp;path: 'path/to/your/animation.json' // 請替換成你的動畫 JSON 路徑</code><br>
+                <code>&nbsp;&nbsp;});</code><br>
+                <code>&lt;/script&gt;</code>
+            </pre>
+        </div>
+
+        <h5 class="text-secondary">範例展示效果</h5>
+        <div id="lottie" style="width: 800px; height: 800px;"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+    <script>
+        var animation = lottie.loadAnimation({
+            container: document.getElementById('lottie'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: 'aaa.json' // 替換成你的動畫 JSON 路徑
+        });
+    </script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

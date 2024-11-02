@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragula</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body class="gradient-background">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">首頁</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="page1.html">AOS 動畫</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page2.html">文字轉語音</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page3.html">Lottie 動畫</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page4.html">Chart.js 圖表</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page5.html">圖片懶加載</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page6.html">SweetAlert2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page7.html">Dragula</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page8.html">Typed.js</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page9.html">Vivus.js</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page10.html">Three.js 3D</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5" style="margin-top: 100px;">
+        <h2 class="text-center mb-4 text-primary">Dragula</h2>
+
+        <h5 class="text-secondary">官方網站連結</h5>
+        <p>
+            <a href="https://bevacqua.github.io/dragula/" target="_blank" class="text-info">
+                https://bevacqua.github.io/dragula/
+            </a>
+        </p>
+
+        <h5 class="text-secondary">範例程式碼</h5>
+        <div class="code-block p-3 mb-4"
+            style="background-color: #f8f9fa; border-radius: 5px; border: 1px solid #ced4da;">
+            <pre>
+                <code>&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.css"&gt;</code><br>
+                <code>&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.js"&gt;&lt;/script&gt;</code><br>
+                <br>
+                <code>dragula([document.getElementById('first-list'), document.getElementById('second-list'), document.getElementById('third-list')]);</code>
+            </pre>
+        </div>
+
+        <h5 class="text-secondary">範例展示效果</h5>
+        <div style="display: flex; justify-content: space-around;">
+            <div class="list" id="first-list" style="width: 200px; border: 1px solid #ccc; padding: 10px;">
+                <div class="item">項目 1</div>
+                <div class="item">項目 2</div>
+                <div class="item">項目 3</div>
+            </div>
+            <div class="list" id="second-list" style="width: 200px; border: 1px solid #ccc; padding: 10px;">
+                <div class="item">項目 A</div>
+                <div class="item">項目 B</div>
+            </div>
+            <div class="list" id="third-list" style="width: 200px; border: 1px solid #ccc; padding: 10px;">
+                <div class="item">項目 一</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.js"></script>
+    <script>
+        dragula([document.getElementById('first-list'), document.getElementById('second-list'), document.getElementById('third-list')]);
+    </script>
+
+    <style>
+        .list {
+            min-height: 200px;
+        }
+
+        .item {
+            padding: 10px;
+            border: 1px solid #007bff;
+            margin: 5px 0;
+            background-color: #f8f9fa;
+            cursor: move;
+        }
+    </style>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
